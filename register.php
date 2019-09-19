@@ -32,5 +32,6 @@
   	  <button type="submit" class="btn" name="reg_user">Register</button>
 	  </div>
   </form>
+  <br><br><br>
 </body>
 </html>

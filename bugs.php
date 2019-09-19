@@ -4,8 +4,8 @@
     <style type="text/css">
         * {
         margin: 0px;
-        padding: 0px;
-        flex-wrap: wrap; 
+        padding: 0px; 
+        flex-wrap: wrap;
         }
 
         body {
@@ -25,7 +25,7 @@
             padding: 20px;
         }
 
-        h2 {
+        h3 {
             padding-top: 10px;
             text-align: center;
             color: white;
@@ -33,22 +33,26 @@
 
         table {
             margin: 8px;
+            margin: 0 auto;
+            margin-top: 20px;
         }
 
         th {
-            font-size: .7em;
+            font-size: 25px;
             background-color: rgba(0,0,0,.45);
             color: white;
             padding: 2px 6px;
             border-collapse: separate;
-            border: 1px solid #000;
+            /*border: 1px solid #000;*/
+            text-align: center;
         }
 
         td {
-            font-size: .7em;
+            font-size: 25px;
             border: 1px solid #DDD;
+            color: white;
+            text-align: center;
         }
-
     </style>
 </head>
 <body>
@@ -58,7 +62,9 @@ $username = "root";
 $password = "";
 $dbname = "registration";
 echo"<h1>BUGS LIGHT YEAR WINNERS</h1>";
-echo"<h2>Contact Numbers:</h2>";
+echo"<h3>Contact: Manoj - 832820852</h3><br>";
+echo"<h3>Venue: IT Lab II</h3><br>";
+echo"<h3>Time: 1:30 PM to 2:15 PM</h3>";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -70,7 +76,7 @@ $sql = "SELECT * FROM events where events like 'Bugs%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>Name</th><th>College</th></tr>";
+    echo "<br><table><tr><th>Name</th><th>College</th></tr>";
 	
     // output data of each row
     while($row = $result->fetch_assoc()) {

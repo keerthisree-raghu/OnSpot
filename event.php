@@ -15,15 +15,15 @@
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   	  <label>Participant 1</label>
-  	  <input type="text" name="username" value="<?php echo $participanta; ?>">
+  	  <input type="text" name="participanta" value="<?php echo $participanta; ?>">
   	</div>
 	<div class="input-group">
   	  <label>Participant 2</label>
-  	  <input type="text" name="username" value="<?php echo $participantb; ?>">
+  	  <input type="text" name="participantb" value="<?php echo $participantb; ?>">
   	</div>
 	<div class="input-group">
   	  <label>Participant 2</label>
-  	  <input type="text" name="username" value="<?php echo $participantc; ?>">
+  	  <input type="text" name="participantc" value="<?php echo $participantc; ?>">
   	</div>
 	<div class="input-group">
   	  <label>Email</label>

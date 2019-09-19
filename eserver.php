@@ -19,18 +19,17 @@ if (isset($_POST['reg_user'])) {
   $participanta = mysqli_real_escape_string($db, $_POST['participanta']);
   $participantb = mysqli_real_escape_string($db, $_POST['participantb']);
   $participantc = mysqli_real_escape_string($db, $_POST['participantc']);
-  $email = mysqli_real_escape_string($db, $_POST['mail']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
   $phone = mysqli_real_escape_string($db, $_POST['phone']);
   $events = mysqli_real_escape_string($db, $_POST['events']);
   $college = mysqli_real_escape_string($db, $_POST['college']);
   
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($username)) { array_push($errors, "Participant 1 is required."); }
+  if (empty($participanta)) { array_push($errors, "Participant 1 is required."); }
   if (empty($email)) { array_push($errors, "Email is required."); }
   if (empty($phone)) { array_push($errors, "Phone number is required."); } 
   if (empty($college)) { array_push($errors, "College name is required."); }
-  if (empty($events)) { array_push($errors, "Event name is required"); } 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $user_check_query = "SELECT * FROM events WHERE participanta='$participanta' OR email='$email' OR phone='$phone'LIMIT 1";
@@ -54,7 +53,7 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	
 
-  	$query = "INSERT INTO events (participanta, participantb, participantc email, phone, college, events) 
+  	$query = "INSERT INTO events (participanta, participantb, participantc, email, phone, college, events) 
   			  VALUES('$participanta', '$participantb', '$participantc', '$email', '$phone','$college','$events')";
   	mysqli_query($db, $query);
   	$_SESSION['[participanta]'] = $participanta;

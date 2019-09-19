@@ -25,7 +25,7 @@
             padding: 20px;
         }
 
-        h2 {
+        h3 {
             padding-top: 10px;
             text-align: center;
             color: white;
@@ -33,22 +33,26 @@
 
         table {
             margin: 8px;
+            margin: 0 auto;
+            margin-top: 20px;
         }
 
         th {
-            font-size: .7em;
+            font-size: 25px;
             background-color: rgba(0,0,0,.45);
             color: white;
             padding: 2px 6px;
             border-collapse: separate;
-            border: 1px solid #000;
+            /*border: 1px solid #000;*/
+            text-align: center;
         }
 
         td {
-            font-size: .7em;
+            font-size: 25px;
             border: 1px solid #DDD;
+            color: white;
+            text-align: center;
         }
-
     </style>
 </head>
 <body>
@@ -58,8 +62,9 @@ $username = "root";
 $password = "";
 $dbname = "registration";
 echo"<h1>CLOUD CASTLE WINNERS</h1>";
-echo"<h2>Contact Numbers:<br></h2>";
-// Create connection
+echo"<h3>Contact: Rubavathi - 9384322876</h3><br>";
+echo"<h3>Venue: IT Lab II</h3><br>";
+echo"<h3>Time: 11:00 AM to 12:30 PM</h3>";// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -70,7 +75,7 @@ $sql = "SELECT * FROM events where events like 'Cloud%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>Name</th><th>College</th></tr>";
+    echo "<br><table><tr><th>Name</th><th>College</th></tr>";
 	
     // output data of each row
     while($row = $result->fetch_assoc()) {

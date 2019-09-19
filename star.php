@@ -25,7 +25,7 @@
             padding: 20px;
         }
 
-        h2 {
+        h3 {
             padding-top: 10px;
             text-align: center;
             color: white;
@@ -61,8 +61,11 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "registration";
-echo"<h1>STAR EMPLOYEE WINNER</h1>";
-echo"<h2>Contact Numbers:</h2>";
+echo"<h1>STAR EMPLOYEE WINNERS</h1>";
+echo"<h3>Contact: Gothai Janaki - 9384322876</h3><br>";
+echo"<h3>Venue: AV Hall III</h3>";
+echo"<h3>Time: 11:00 AM to 11:30 AM</h3>";
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -74,7 +77,7 @@ $sql = "SELECT * FROM events where events like 'Star%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table><tr><th>Name</th><th>College</th></tr>";
+    echo "<br><table><tr><th>Name</th><th>College</th></tr>";
 	
     // output data of each row
     while($row = $result->fetch_assoc()) {
